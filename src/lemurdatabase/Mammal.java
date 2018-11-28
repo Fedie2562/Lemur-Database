@@ -8,15 +8,16 @@ package lemurdatabase;
 public class Mammal {
   private int itsAge;
   private int itsWeight;
-  private String breed, itsGender;
+  String breed, itsGender;
 
   public Mammal() {
-    itsAge = 2;
-    itsWeight = 5;
+    setGender(random(1,2));
+    itsAge = random(2,14);
+    itsWeight = random(1,(itsAge > 10) ? 7 : itsAge);
   }
   
-  public void setGender(String gender) {
-      itsGender = gender;
+  public void setGender(int gender) {
+      itsGender = (gender == 1) ? "Male" : "Female";
   }
 
   public int getAge() {
@@ -45,5 +46,18 @@ public class Mammal {
 
   public void speak() {
     //will be overwritten by Dog class and Cat class
+  }
+  
+  public String toString(){
+      String output = "";
+      output += "Gender : "+itsGender+"\n";
+      output += "Age : "+itsAge+"\n";
+      output += "Weight : "+itsWeight+"\n";
+      return output;
+  }
+  
+  public static int random(int min, int max){
+    int range = (max - min) + 1;     
+    return (int)(Math.random() * range) + min;
   }
 }
