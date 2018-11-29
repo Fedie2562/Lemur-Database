@@ -10,12 +10,12 @@ package lemurdatabase;
  * @author fedie2562
  */
 public class Lemur extends Mammal {
-    String habitat = "Madagascar";
-    String classification = "Prosimian";
-    String coat = "Fur";
+    String habitat, classification, coat;
     public Lemur(){
         super();
-        
+        habitat = "Madagascar";
+        classification = "Prosimian";
+        coat = "Fur";
     }
     public String toString(){
         String output = super.toString();

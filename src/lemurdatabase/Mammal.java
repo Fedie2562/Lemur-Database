@@ -50,6 +50,7 @@ public class Mammal {
   
   public String toString(){
       String output = "";
+      output += "------------------------\n";
       output += "Gender : "+itsGender+"\n";
       output += "Age : "+itsAge+"\n";
       output += "Weight : "+itsWeight+"\n";
